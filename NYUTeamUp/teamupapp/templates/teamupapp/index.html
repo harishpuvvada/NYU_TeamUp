@@ -4,7 +4,11 @@
 
     {% if project_list %}
       {% for project in project_list %}
-          <div><a href="{% url 'teamupapp:projList' project.category%}">{{ project.category }}</a></div>
+          <a href="{% url 'teamupapp:projList' project.category%}">
+            <div id="category-{{project.category}}-container" class="category-{{project.category}}-container category-container">
+                <div>{{project.category}}</div>
+            </div>
+          </a>
       {% endfor %}
     {% else %}
       <p>No projects available</p>
