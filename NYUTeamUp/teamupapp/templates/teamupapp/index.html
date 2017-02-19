@@ -1,26 +1,13 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="{% static 'projectStyle.css' %}">
-  <script src="{%  static 'jquery-3.0.0.js'%}"></script>
-  <script src="{%  static 'projectJS.js'%}"></script>
-  <title>{% block title %} NYU TeamUp {% endblock %}</title>
-  <div id="head-container" class="head-container" style="display: block;"><div>NYU TeamUp</div></div>
-  <main>
-    {% if category_list %}
-      {% for category in category_list %}
-        <a href="#">
-          <div id="category-{{ category }}-container" class="category-{{ category }}-container category-container">
-              <div>{{ category }}</div>
-          </div>
-        </a>
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if project_list %}
+      {% for project in project_list %}
+          <div><a href="{% url 'teamupapp:projList' project.category%}">{{ project.category }}</a></div>
       {% endfor %}
     {% else %}
       <p>No projects available</p>
     {% endif %}
-  </main>
-</body>
-</html>
+
+{% endblock %}

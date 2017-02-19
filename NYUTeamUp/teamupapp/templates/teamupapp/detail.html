@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div><a href="#">{{ project.projectName }}</a>
+        <p>{{ project.description }}</p>
+    </div>
+    {% if job_list %}
+      {% for job in job_list %}
+        <div><a href="#">{{ job.requirement }}</a>
+             <p>{{ job.numOfPositions }}</p>
+        </div>
+
+      {% endfor %}
+    {% else %}
+      <p>No projects available</p>
+    {% endif %}
+{% endblock %}
