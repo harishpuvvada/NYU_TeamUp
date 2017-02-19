@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %} NYU TeamUp {% endblock %}</title>
+    <link rel="stylesheet" href="/teamupapp/static/projectStyle.css" />
+</head>
+<body>
+  <header>
+    <div>
+        <a href="#">Add project</a>
+    </div>
+    <div>
+        <a href="{% url 'teamupapp:myProjList' '12345' %}">My Projects</a>
+    </div>
+    <div>
+        <a href="{% url 'teamupapp:myApplications' '12345' %}">My Applications</a>
+    </div>
+    <div>
+        <a href="#">My Profile</a>
+    </div>
+    <div>
+        <a href="{% url 'teamupapp:loggedOut' %}">Logout</a>
+    </div>
+  </header>
+  <hr>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <hr>
+  <footer>
+    <p>This is footer</p>
+  </footer>
+</body>
+</html>
