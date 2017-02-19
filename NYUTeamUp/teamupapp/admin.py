@@ -9,7 +9,7 @@ class LoginAdmin(admin.ModelAdmin):
 admin.site.register(Login,LoginAdmin)
 
 class UserAdmin(admin.ModelAdmin):
-	list_display = ['userId','loginId', 'name', 'areaOfInterest', 'role', 'emailId']
+	list_display = ['userId','loginId', 'name', 'areaOfInterest', 'role', 'emailId','resumeDoc']
 
 admin.site.register(User,UserAdmin)
 
