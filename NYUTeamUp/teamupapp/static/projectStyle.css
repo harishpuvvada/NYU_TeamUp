@@ -70,14 +70,43 @@ body{
      background-color: #009900;
 }
 
+.project-container{
+    box-shadow: 15px 0px 12px #888888;
+    border: solid #FFFFFF 0.1vmin;
+    border-radius: 2vmin;
+    background-color: white;
+    padding-top: 2%;
+    text-align: center;
+    width: 95%;
+    margin: 1.5%;
+    height: 10%;
+    float: left;
+    font-size: 1.8vw;
+}
+
 .page-foot{
+    float: left;
+    width: 100%;
     background-color: #07A6EA;
     color: #FFFFFF;
     font-size: 1.3vw;
     padding-left: 3%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
     padding: 1rem;
+}
+main{
+    text-align: center;
+}
+.green-button {
+    float: right;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    max-width: 10vw;
+    font-size: 1.2vw;
+    display: inline-block;
+    background-color: #00BF4E;
+    color: white;
+    padding: 0.5vw 2.5vw;
+    border-radius: 2vw;
+    font-weight: 100;
+    cursor: pointer;
 }

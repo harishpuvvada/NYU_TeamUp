@@ -24,6 +24,7 @@ class Project(models.Model):
 class Job(models.Model):
 	jobId = models.CharField(max_length=25)
 	projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
+	jobName = models.CharField(max_length=50, default='')
 	requirement = models.TextField()
 	timeStamp = models.DateTimeField()
 	numOfPositions = models.IntegerField()

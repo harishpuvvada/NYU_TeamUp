@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'projectStyle.css' %}" />
 {% block content %}
 
     <div><a href="#">{{ project.projectName }}</a>
         <p>{{ project.description }}</p>
+        <p> Contact : {{ user.emailId }} hp107@nyu.edu</p>
     </div>
     {% if job_list %}
       {% for job in job_list %}
-        <div><a href="#">{{ job.requirement }}</a>
-             <p>{{ job.numOfPositions }}</p>
+        <div>Requirements:{{ job.requirement }}
+             <p>Number of positions: {{ job.numOfPositions }}</p>
+             <div id="Apply-{{category}}-container" class="Apply-{{category}}-container Apply-container green-button" href="#">Apply
         </div>
 
       {% endfor %}

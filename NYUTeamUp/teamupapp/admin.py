@@ -21,7 +21,7 @@ admin.site.register(Project,ProjectAdmin)
 
 
 class JobAdmin(admin.ModelAdmin):
-	list_display = ['jobId','projectId', 'requirement', 'timeStamp', 'numOfPositions']
+	list_display = ['jobId','projectId', 'jobName', 'requirement', 'timeStamp', 'numOfPositions']
 
 admin.site.register(Job,JobAdmin)
 
