@@ -1,36 +1,48 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
-<head>
+<head></head>
+
+<body>
   <meta charset="utf-8">
   <title>{% block title %} NYU TeamUp {% endblock %}</title>
-    <link rel="stylesheet" href="/teamupapp/static/projectStyle.css" />
-</head>
-<body>
-  <header>
-    <div>
-        <a href="#">Add project</a>
-    </div>
-    <div>
-        <a href="{% url 'teamupapp:myProjList' '12345' %}">My Projects</a>
-    </div>
-    <div>
-        <a href="{% url 'teamupapp:myApplications' '12345' %}">My Applications</a>
-    </div>
-    <div>
-        <a href="#">My Profile</a>
-    </div>
-    <div>
-        <a href="{% url 'teamupapp:loggedOut' %}">Logout</a>
-    </div>
-  </header>
-  <hr>
+  <link rel="stylesheet" type="text/css" href="{% static 'projectStyle.css' %}">
+  <script src="{%  static 'jquery-3.0.0.js'%}"></script>
+  <script src="{%  static 'projectJS.js'%}"></script>
+  <div id="head-container" class="head-container" style="display: block;"><div>NYU TeamUp</div></div>
+  <div id="header-tile" class="header-tile">
+    <a href="#">
+        <div class="hover-tile">
+            <div id="add-project" class="add-project head-tile">Add project</div>
+        </div>
+    </a>
+    <a href="{% url 'teamupapp:myProjList' '12345' %}">
+        <div class="hover-tile">
+            <div id="my-projects" class="my-projects head-tile">My Projects</div>
+        </div>
+    </a>
+    <a href="{% url 'teamupapp:myApplications' '12345' %}">
+        <div class="hover-tile">
+            <div id="my-applications" class="my-applications head-tile">My Applications</div>
+        </div>
+    </a>
+    <a href="#">
+        <div class="hover-tile">
+            <div id="my-profile" class="my-profile head-tile">My Profile</div>
+        </div>
+    </a>
+    <a href="#">
+        <div class="hover-tile">
+            <div id="logout" class="logout head-tile">Logout</div>
+        </div>
+    </a>
+  </div>
   <main>
     {% block content %}
     {% endblock %}
   </main>
-  <hr>
-  <footer>
-    <p>This is footer</p>
+  <footer id="page-foot" class="page-foot">
+    <p>Copyright @HackNYU2017</p>
   </footer>
 </body>
 </html>
