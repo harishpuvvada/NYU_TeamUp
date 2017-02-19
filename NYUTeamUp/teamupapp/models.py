@@ -15,20 +15,20 @@ class User(models.Model):
 	resumeDoc = models.FileField(upload_to='NYUTeamUp/teamupapp/storage/',default='NYUTeamUp/teamupapp/storage/')
 
 class Project(models.Model):
-	projectId = models.AutoField(primary_key=True)
+	projectId = models.CharField(max_length=25)
 	projectName = models.CharField(max_length=50)
 	userId = models.ForeignKey(User, on_delete=models.CASCADE)
 	category = models.CharField(max_length=25)
 	description = models.TextField()
 
 class Job(models.Model):
-	jobId = models.AutoField(primary_key=True)
+	jobId = models.CharField(max_length=25)
 	projectId = models.ForeignKey(Project, on_delete=models.CASCADE)
 	requirement = models.TextField()
 	timeStamp = models.DateTimeField()
 	numOfPositions = models.IntegerField()
 
 class Application(models.Model):
-	appId=models.AutoField(primary_key=True)
+	appId=models.CharField(max_length=25)
 	jobId = models.ForeignKey(Job, on_delete=models.CASCADE)
 	userId = models.ForeignKey(User, on_delete=models.CASCADE)
