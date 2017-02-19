@@ -13,8 +13,9 @@ class User(models.Model):
 	areaOfInterest=models.CharField(max_length=50)
 	role = models.CharField(max_length=20)
 	emailId = models.EmailField(max_length=50)
-	
+	resumeDoc = models.FileField(upload_to='NYUTeamUp/teamupapp/storage/',default='NYUTeamUp/teamupapp/storage/')
 
+	
 class Project(models.Model):
 	projectId = models.CharField(max_length=25)
 	projectName = models.CharField(max_length=50)
